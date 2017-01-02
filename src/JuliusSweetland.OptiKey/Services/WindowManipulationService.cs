@@ -128,7 +128,7 @@ namespace JuliusSweetland.OptiKey.Services
         #region Properties
 
         public bool SizeAndPositionIsInitialised { get; private set; }
-        public WindowStates WindowState { get { return getWindowState(); } }
+        public WindowStates WindowState => getWindowState();
 
         #endregion
 

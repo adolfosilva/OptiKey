@@ -11,76 +11,70 @@ namespace JuliusSweetland.OptiKey.UnitTests.Services.AutoComplete
             return new NGramAutoComplete();
         }
 
-        protected override object[] SuggestionsTestCaseSource
-        {
-            get
-            {
-                return new object[] {
-                    new object[] {
-                        "t",
-                        new[] {
-                            "to", "the", "two", "that", "this", "they", "time", "take", "them", "than", "then", "there",
-                            "their", "think", "these"
-                        }
-                    },
-                    new object[] {
-                        "th",
-                        new[] {
-                            "the", "that", "this", "they", "them", "than", "then", "there", "their", "think", "these",
-                            "to", "two", "with", "time", "take"
-                        }
-                    },
-                    new object[] {
-                        "the",
-                        new[] {
-                            "the", "they", "them", "then", "there", "their", "these", "that", "this", "than", "think",
-                            "to", "he", "she", "two", "time", "take", "other"
-                        }
-                    },
-                    new object[] {
-                        "thes",
-                        new[] {
-                            "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
-                            "to", "two", "time", "take", "other"
-                        }
-                    },
-                    new object[] {
-                        "thesa",
-                        new[] {
-                            "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
-                            "to", "two", "time", "take", "other"
-                        }
-                    },
-                    new object[] {
-                        "thesau",
-                        new[] {
-                            "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
-                            "to", "two", "time", "take", "other"
-                        }
-                    },
-                    new object[] {
-                        "thesaur",
-                        new[] {
-                            "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
-                            "to", "two", "our", "time", "take", "your", "other"
-                        }
-                    },
-                    new object[] {
-                        "thesauru",
-                        new[] {
-                            "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
-                            "to", "two", "time", "take", "other"
-                        }
-                    },
-                    new object[] {
-                        "thesaurus",
-                        new[] {
-                            "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
-                            "to", "us", "two", "time", "take", "other"
-                        }
-                    }
-                };
+        protected override object[] SuggestionsTestCaseSource => new object[] {
+            new object[] {
+                "t",
+                new[] {
+                    "to", "the", "two", "that", "this", "they", "time", "take", "them", "than", "then", "there",
+                    "their", "think", "these"
+                }
+            },
+            new object[] {
+                "th",
+                new[] {
+                    "the", "that", "this", "they", "them", "than", "then", "there", "their", "think", "these",
+                    "to", "two", "with", "time", "take"
+                }
+            },
+            new object[] {
+                "the",
+                new[] {
+                    "the", "they", "them", "then", "there", "their", "these", "that", "this", "than", "think",
+                    "to", "he", "she", "two", "time", "take", "other"
+                }
+            },
+            new object[] {
+                "thes",
+                new[] {
+                    "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
+                    "to", "two", "time", "take", "other"
+                }
+            },
+            new object[] {
+                "thesa",
+                new[] {
+                    "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
+                    "to", "two", "time", "take", "other"
+                }
+            },
+            new object[] {
+                "thesau",
+                new[] {
+                    "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
+                    "to", "two", "time", "take", "other"
+                }
+            },
+            new object[] {
+                "thesaur",
+                new[] {
+                    "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
+                    "to", "two", "our", "time", "take", "your", "other"
+                }
+            },
+            new object[] {
+                "thesauru",
+                new[] {
+                    "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
+                    "to", "two", "time", "take", "other"
+                }
+            },
+            new object[] {
+                "thesaurus",
+                new[] {
+                    "these", "the", "they", "them", "then", "there", "their", "that", "this", "than", "think",
+                    "to", "us", "two", "time", "take", "other"
+                }
             }
-        }
+        };
     }
 }

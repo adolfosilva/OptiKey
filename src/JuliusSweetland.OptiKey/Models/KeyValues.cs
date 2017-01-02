@@ -257,152 +257,113 @@ namespace JuliusSweetland.OptiKey.Models
             };
         }
 
-        public static List<KeyValue> KeysWhichCanBePressedDown
-        {
-            get
+        public static List<KeyValue> KeysWhichCanBePressedDown => CombiningKeys.Concat(
+            new List <KeyValue>
             {
-                return CombiningKeys.Concat(
-                    new List <KeyValue>
-                    {
-                        LeftAltKey,
-                        LeftCtrlKey,
-                        LeftShiftKey,
-                        LeftWinKey,
-                        MouseMagnifierKey,
-                        MultiKeySelectionIsOnKey
-                    })
-                    .ToList();
-            }
-        }
+                LeftAltKey,
+                LeftCtrlKey,
+                LeftShiftKey,
+                LeftWinKey,
+                MouseMagnifierKey,
+                MultiKeySelectionIsOnKey
+            })
+            .ToList();
 
-        public static List<KeyValue> KeysWhichCanBeLockedDown
+        public static List<KeyValue> KeysWhichCanBeLockedDown => new List<KeyValue>
         {
-            get
-            {
-                return new List<KeyValue>
-                {
-                    LeftAltKey,
-                    LeftCtrlKey,
-                    LeftShiftKey,
-                    LeftWinKey,
-                    MouseLeftDownUpKey,
-                    MouseMagneticCursorKey,
-                    MouseMagnifierKey,
-                    MouseMiddleDownUpKey,
-                    MouseRightDownUpKey,
-                    MultiKeySelectionIsOnKey,
-                    SleepKey
-                };
-            }
-        }
+            LeftAltKey,
+            LeftCtrlKey,
+            LeftShiftKey,
+            LeftWinKey,
+            MouseLeftDownUpKey,
+            MouseMagneticCursorKey,
+            MouseMagnifierKey,
+            MouseMiddleDownUpKey,
+            MouseRightDownUpKey,
+            MultiKeySelectionIsOnKey,
+            SleepKey
+        };
 
-        public static List<KeyValue> KeysWhichCanBePressedOrLockedDown
-        {
-            get
-            {
-                return KeysWhichCanBePressedDown.Concat(KeysWhichCanBeLockedDown).Distinct().ToList();
-            }
-        }
+        public static List<KeyValue> KeysWhichCanBePressedOrLockedDown => KeysWhichCanBePressedDown.Concat(KeysWhichCanBeLockedDown).Distinct().ToList();
 
-        public static List<KeyValue> KeysWhichPreventTextCaptureIfDownOrLocked
+        public static List<KeyValue> KeysWhichPreventTextCaptureIfDownOrLocked => new List<KeyValue>
         {
-            get
-            {
-                return new List<KeyValue>
-                {
-                    LeftAltKey,
-                    LeftCtrlKey,
-                    LeftWinKey
-                };
-            }
-        }
+            LeftAltKey,
+            LeftCtrlKey,
+            LeftWinKey
+        };
 
-        public static List<KeyValue> CombiningKeys
+        public static List<KeyValue> CombiningKeys => new List<KeyValue>
         {
-            get
-            {
-                return new List<KeyValue>
-                {
-                    //N.B. The order of these key values is important. This is the order in which combining keys which are down will be composed into a primary composite.
-                    CombiningDiaeresisOrUmlautKey, //Diaeresis must be before the AcuteAccent if they are to combine into a COMBINING GREEK DIALYTIKA TONOS U+0344
-                    CombiningAcuteAccentKey, //AuteAccent must be after the Diaeresis if they are to combine into a COMBINING GREEK DIALYTIKA TONOS U+0344
-                    CombiningBreveKey,
-                    CombiningCaronOrHacekKey,
-                    CombiningCedillaKey,
-                    CombiningCircumflexKey,
-                    CombiningCommaAboveOrSmoothBreathingKey,
-                    CombiningCyrillicPsiliPneumataOrSmoothBreathingKey,
-                    CombiningDotAboveKey,
-                    CombiningDotAboveRightKey,
-                    CombiningDotBelowKey,
-                    CombiningDoubleAcuteAccentKey,
-                    CombiningDoubleGraveAccentKey,
-                    CombiningGraveAccentKey,
-                    CombiningHookAboveKey,
-                    CombiningHornKey,
-                    CombiningInvertedBreveKey,
-                    CombiningIotaSubscriptOrYpogegrammeniKey,
-                    CombiningMacronKey,
-                    CombiningOgonekOrNosineKey,
-                    CombiningPalatalizedHookBelowKey,
-                    CombiningPerispomeneKey,
-                    CombiningRetroflexHookBelowKey,
-                    CombiningReversedCommaAboveOrRoughBreathingKey,
-                    CombiningRingAboveKey,
-                    CombiningRingBelowKey,
-                    CombiningTildeKey
-                };
-            }
-        }
+            //N.B. The order of these key values is important. This is the order in which combining keys which are down will be composed into a primary composite.
+            CombiningDiaeresisOrUmlautKey, //Diaeresis must be before the AcuteAccent if they are to combine into a COMBINING GREEK DIALYTIKA TONOS U+0344
+            CombiningAcuteAccentKey, //AuteAccent must be after the Diaeresis if they are to combine into a COMBINING GREEK DIALYTIKA TONOS U+0344
+            CombiningBreveKey,
+            CombiningCaronOrHacekKey,
+            CombiningCedillaKey,
+            CombiningCircumflexKey,
+            CombiningCommaAboveOrSmoothBreathingKey,
+            CombiningCyrillicPsiliPneumataOrSmoothBreathingKey,
+            CombiningDotAboveKey,
+            CombiningDotAboveRightKey,
+            CombiningDotBelowKey,
+            CombiningDoubleAcuteAccentKey,
+            CombiningDoubleGraveAccentKey,
+            CombiningGraveAccentKey,
+            CombiningHookAboveKey,
+            CombiningHornKey,
+            CombiningInvertedBreveKey,
+            CombiningIotaSubscriptOrYpogegrammeniKey,
+            CombiningMacronKey,
+            CombiningOgonekOrNosineKey,
+            CombiningPalatalizedHookBelowKey,
+            CombiningPerispomeneKey,
+            CombiningRetroflexHookBelowKey,
+            CombiningReversedCommaAboveOrRoughBreathingKey,
+            CombiningRingAboveKey,
+            CombiningRingBelowKey,
+            CombiningTildeKey
+        };
 
         /// <summary>
         /// Keys which are published when OptiKey is publishing (simulating key strokes). Otherwise these keys have no impact 
         /// on text within OptiKey (which is why LeftShift is not included as this modifies the case of entered text).
         /// </summary>
-        public static List<KeyValue> PublishOnlyKeys
+        public static List<KeyValue> PublishOnlyKeys => new List<KeyValue>
         {
-            get
-            {
-                return new List<KeyValue>
-                {
-                    new KeyValue(FunctionKeys.LeftCtrl),
-                    new KeyValue(FunctionKeys.LeftWin),
-                    new KeyValue(FunctionKeys.LeftAlt),
-                    new KeyValue(FunctionKeys.F1),
-                    new KeyValue(FunctionKeys.F2),
-                    new KeyValue(FunctionKeys.F3),
-                    new KeyValue(FunctionKeys.F4),
-                    new KeyValue(FunctionKeys.F5),
-                    new KeyValue(FunctionKeys.F6),
-                    new KeyValue(FunctionKeys.F7),
-                    new KeyValue(FunctionKeys.F8),
-                    new KeyValue(FunctionKeys.F9),
-                    new KeyValue(FunctionKeys.F10),
-                    new KeyValue(FunctionKeys.F11),
-                    new KeyValue(FunctionKeys.F12),
-                    new KeyValue(FunctionKeys.PrintScreen),
-                    new KeyValue(FunctionKeys.ScrollLock),
-                    new KeyValue(FunctionKeys.NumberLock),
-                    new KeyValue(FunctionKeys.Menu),
-                    new KeyValue(FunctionKeys.ArrowUp),
-                    new KeyValue(FunctionKeys.ArrowLeft),
-                    new KeyValue(FunctionKeys.ArrowRight),
-                    new KeyValue(FunctionKeys.ArrowDown),
-                    new KeyValue(FunctionKeys.Break),
-                    new KeyValue(FunctionKeys.Insert),
-                    new KeyValue(FunctionKeys.Home),
-                    new KeyValue(FunctionKeys.PgUp),
-                    new KeyValue(FunctionKeys.PgDn),
-                    new KeyValue(FunctionKeys.Delete),
-                    new KeyValue(FunctionKeys.End),
-                    new KeyValue(FunctionKeys.Escape)
-                };
-            }
-        }
+            new KeyValue(FunctionKeys.LeftCtrl),
+            new KeyValue(FunctionKeys.LeftWin),
+            new KeyValue(FunctionKeys.LeftAlt),
+            new KeyValue(FunctionKeys.F1),
+            new KeyValue(FunctionKeys.F2),
+            new KeyValue(FunctionKeys.F3),
+            new KeyValue(FunctionKeys.F4),
+            new KeyValue(FunctionKeys.F5),
+            new KeyValue(FunctionKeys.F6),
+            new KeyValue(FunctionKeys.F7),
+            new KeyValue(FunctionKeys.F8),
+            new KeyValue(FunctionKeys.F9),
+            new KeyValue(FunctionKeys.F10),
+            new KeyValue(FunctionKeys.F11),
+            new KeyValue(FunctionKeys.F12),
+            new KeyValue(FunctionKeys.PrintScreen),
+            new KeyValue(FunctionKeys.ScrollLock),
+            new KeyValue(FunctionKeys.NumberLock),
+            new KeyValue(FunctionKeys.Menu),
+            new KeyValue(FunctionKeys.ArrowUp),
+            new KeyValue(FunctionKeys.ArrowLeft),
+            new KeyValue(FunctionKeys.ArrowRight),
+            new KeyValue(FunctionKeys.ArrowDown),
+            new KeyValue(FunctionKeys.Break),
+            new KeyValue(FunctionKeys.Insert),
+            new KeyValue(FunctionKeys.Home),
+            new KeyValue(FunctionKeys.PgUp),
+            new KeyValue(FunctionKeys.PgDn),
+            new KeyValue(FunctionKeys.Delete),
+            new KeyValue(FunctionKeys.End),
+            new KeyValue(FunctionKeys.Escape)
+        };
 
-        public static List<KeyValue> MultiKeySelectionKeys
-        {
-            get { return multiKeySelectionKeys[Settings.Default.KeyboardAndDictionaryLanguage]; }
-        }
+        public static List<KeyValue> MultiKeySelectionKeys => multiKeySelectionKeys[Settings.Default.KeyboardAndDictionaryLanguage];
     }
 }

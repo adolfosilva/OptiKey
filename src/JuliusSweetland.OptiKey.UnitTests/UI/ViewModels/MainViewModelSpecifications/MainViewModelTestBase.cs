@@ -25,7 +25,7 @@ namespace JuliusSweetland.OptiKey.UnitTests.UI.ViewModels.MainViewModelSpecifica
         protected bool IsKeySelectionEventHandlerCalled { get; private set; }
         protected bool IsPointSelectionEventHandlerCalled { get; private set; }
 
-        protected virtual bool ShouldConstruct { get { return true; } }
+        protected virtual bool ShouldConstruct => true;
 
         protected override void Arrange()
         {

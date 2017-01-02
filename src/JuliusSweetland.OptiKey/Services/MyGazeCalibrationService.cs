@@ -29,6 +29,6 @@ namespace JuliusSweetland.OptiKey.Services
             throw new ApplicationException(Resources.CALIBRATION_FAIL_NO_MESSAGE);
         }
 
-        public bool CanBeCompletedWithoutManualIntervention { get { return true; } }
+        public bool CanBeCompletedWithoutManualIntervention => true;
     }
 }

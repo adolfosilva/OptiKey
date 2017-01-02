@@ -16,8 +16,9 @@ namespace JuliusSweetland.OptiKey.Models
             this.timeSpan = timeSpan;
         }
 
-        public string Name { get { return name; } }
-        public KeyValue KeyValue { get { return keyValue; } }
+        public string Name => name;
+        public KeyValue KeyValue => keyValue;
+
         public double? TimeSpanTotalMilliseconds
         {
             get { return timeSpan != null ? timeSpan.Value.TotalMilliseconds : (double?)null; }

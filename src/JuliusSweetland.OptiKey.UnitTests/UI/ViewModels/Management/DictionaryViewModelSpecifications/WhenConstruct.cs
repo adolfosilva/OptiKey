@@ -8,13 +8,7 @@ namespace JuliusSweetland.OptiKey.UnitTests.UI.ViewModels.Management.DictionaryV
     [TestFixture]
     public class WhenConstruct : DictionaryViewModelTestBase
     {
-        protected override bool ShouldConstruct
-        {
-            get
-            {
-                return false;
-            }
-        }
+        protected override bool ShouldConstruct => false;
 
         protected List<DictionaryEntry> DictionaryEntries { get; set; }
 

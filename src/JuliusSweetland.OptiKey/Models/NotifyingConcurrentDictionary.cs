@@ -33,9 +33,6 @@ namespace JuliusSweetland.OptiKey.Models
             }
         }
 
-        public ICollection<TKey> Keys
-        {
-            get { return dictionary.Keys; }
-        }
+        public ICollection<TKey> Keys => dictionary.Keys;
     }
 }

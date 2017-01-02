@@ -10,7 +10,7 @@ namespace JuliusSweetland.OptiKey.UnitTests.UI.ViewModels.ManagementViewModelSpe
         protected Mock<IAudioService> AudioService { get; private set; }
         protected Mock<IDictionaryService> DictionaryService { get; private set; }
 
-        protected virtual bool ShouldConstruct { get { return true; } }
+        protected virtual bool ShouldConstruct => true;
 
         protected override void Arrange()
         {

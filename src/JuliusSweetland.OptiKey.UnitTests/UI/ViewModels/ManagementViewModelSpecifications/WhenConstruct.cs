@@ -6,13 +6,7 @@ namespace JuliusSweetland.OptiKey.UnitTests.UI.ViewModels.ManagementViewModelSpe
     [TestFixture]
     public class WhenConstruct : ManagementViewModelTestBase
     {
-        protected override bool ShouldConstruct
-        {
-            get
-            {
-                return false;
-            }
-        }
+        protected override bool ShouldConstruct => false;
 
         protected override void Act()
         {

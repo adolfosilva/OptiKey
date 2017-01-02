@@ -63,9 +63,9 @@ namespace JuliusSweetland.OptiKey.UI.Windows
 
         public IWindowManipulationService WindowManipulationService { get; set; }
 
-        public InteractionRequest<NotificationWithServicesAndState> ManagementWindowRequest { get { return managementWindowRequest; } }
-        public ICommand ManagementWindowRequestCommand { get { return managementWindowRequestCommand; } }
-        public ICommand QuitCommand { get { return quitCommand; } }
+        public InteractionRequest<NotificationWithServicesAndState> ManagementWindowRequest => managementWindowRequest;
+        public ICommand ManagementWindowRequestCommand => managementWindowRequestCommand;
+        public ICommand QuitCommand => quitCommand;
 
         private void RequestManagementWindow()
         {

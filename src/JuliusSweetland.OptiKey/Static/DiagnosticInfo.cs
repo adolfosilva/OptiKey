@@ -23,13 +23,7 @@ namespace JuliusSweetland.OptiKey.Static
         private const uint TOKEN_QUERY = 0x0008;
         private const uint TOKEN_READ = (STANDARD_RIGHTS_READ | TOKEN_QUERY);
 
-        public static string AssemblyVersion
-        {
-            get
-            {
-                return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
+        public static string AssemblyVersion => System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public static string AssemblyFileVersion
         {
@@ -48,36 +42,15 @@ namespace JuliusSweetland.OptiKey.Static
             }
         }
 
-        public static bool IsApplicationNetworkDeployed
-        {
-            get
-            {
-                return ApplicationDeployment.IsNetworkDeployed;
-            }
-        }
+        public static bool IsApplicationNetworkDeployed => ApplicationDeployment.IsNetworkDeployed;
 
-        public static string DeploymentVersion
-        {
-            get
-            {
-                return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-            }
-        }
-    
-        public static bool RunningAsAdministrator
-        {
-            get { return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator); }
-        }
+        public static string DeploymentVersion => ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
 
-        public static string ProcessBitness
-        {
-            get { return Environment.Is64BitProcess ? "64-Bit" : "32-Bit"; }
-        }
+        public static bool RunningAsAdministrator => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 
-        public static string OperatingSystemBitness
-        {
-            get { return Environment.Is64BitOperatingSystem ? "64-Bit" : "32-Bit"; }
-        }
+        public static string ProcessBitness => Environment.Is64BitProcess ? "64-Bit" : "32-Bit";
+
+        public static string OperatingSystemBitness => Environment.Is64BitOperatingSystem ? "64-Bit" : "32-Bit";
 
         public static string OperatingSystemVersion
         {

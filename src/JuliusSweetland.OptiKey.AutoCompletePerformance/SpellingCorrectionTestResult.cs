@@ -16,14 +16,8 @@ namespace JuliusSweetland.OptiKey.AutoCompletePerformance
         public int CharactersTyped { get; private set; }
         public TimeSpan TimeTaken { get; private set; }
 
-        public string Misspelling
-        {
-            get { return misspellingTest.Misspelling; }
-        }
+        public string Misspelling => misspellingTest.Misspelling;
 
-        public string TargetWord
-        {
-            get { return misspellingTest.TargetWord; }
-        }
+        public string TargetWord => misspellingTest.TargetWord;
     }
 }

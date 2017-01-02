@@ -100,14 +100,14 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels
 
         #region Properties
 
-        public IInputService InputService { get { return inputService; } }
-        public ICapturingStateManager CapturingStateManager { get { return capturingStateManager; } }
-        public IKeyboardOutputService KeyboardOutputService { get { return keyboardOutputService; } }
-        public IKeyStateService KeyStateService { get { return keyStateService; } }
-        public ISuggestionStateService SuggestionService { get { return suggestionService; } }
-        public ICalibrationService CalibrationService { get { return calibrationService; } }
+        public IInputService InputService => inputService;
+        public ICapturingStateManager CapturingStateManager => capturingStateManager;
+        public IKeyboardOutputService KeyboardOutputService => keyboardOutputService;
+        public IKeyStateService KeyStateService => keyStateService;
+        public ISuggestionStateService SuggestionService => suggestionService;
+        public ICalibrationService CalibrationService => calibrationService;
 
-        public IWindowManipulationService MainWindowManipulationService { get { return mainWindowManipulationService; } }
+        public IWindowManipulationService MainWindowManipulationService => mainWindowManipulationService;
 
         private IKeyboard keyboard;
         public IKeyboard Keyboard
@@ -214,19 +214,13 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels
             set { SetProperty(ref pointsPerSecond, value); }
         }
         
-        public string ApplicationAndSystemInfo
-        {
-            get
-            {
-                return string.Format("v:{0} | P:{1} {2} | OS:{3} {4} ({5})",
-                    DiagnosticInfo.AssemblyVersion,
-                    DiagnosticInfo.ProcessBitness,
-                    DiagnosticInfo.IsProcessElevated ? "(Elevated)" : "(Not Elevated)",
-                    DiagnosticInfo.OperatingSystemBitness,
-                    DiagnosticInfo.OperatingSystemVersion,
-                    DiagnosticInfo.OperatingSystemServicePack);
-            }
-        }
+        public string ApplicationAndSystemInfo => string.Format("v:{0} | P:{1} {2} | OS:{3} {4} ({5})",
+            DiagnosticInfo.AssemblyVersion,
+            DiagnosticInfo.ProcessBitness,
+            DiagnosticInfo.IsProcessElevated ? "(Elevated)" : "(Not Elevated)",
+            DiagnosticInfo.OperatingSystemBitness,
+            DiagnosticInfo.OperatingSystemVersion,
+            DiagnosticInfo.OperatingSystemServicePack);
 
         private bool scratchpadIsDisabled;
         public bool ScratchpadIsDisabled
@@ -235,8 +229,8 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels
             set { SetProperty(ref scratchpadIsDisabled, value); }
         }
 
-        public InteractionRequest<NotificationWithCalibrationResult> CalibrateRequest { get { return calibrateRequest; } }
-        
+        public InteractionRequest<NotificationWithCalibrationResult> CalibrateRequest => calibrateRequest;
+
         #endregion
 
         #region Methods

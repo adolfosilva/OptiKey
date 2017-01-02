@@ -9,7 +9,7 @@ namespace JuliusSweetland.OptiKey.UnitTests.UI.ViewModels.Management.DictionaryV
         protected DictionaryViewModel DictionaryViewModel { get; set; }
         protected Mock<IDictionaryService> DictionaryService { get; private set; }
 
-        protected virtual bool ShouldConstruct { get { return true; } }
+        protected virtual bool ShouldConstruct => true;
 
         protected override void Arrange()
         {

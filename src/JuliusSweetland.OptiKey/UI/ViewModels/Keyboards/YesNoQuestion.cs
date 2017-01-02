@@ -32,8 +32,8 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels.Keyboards
             };
         }
         
-        public string Text { get { return text; } }
-        public Action YesAction { get { return yesAction; } }
-        public Action NoAction { get { return noAction; } }
+        public string Text => text;
+        public Action YesAction => yesAction;
+        public Action NoAction => noAction;
     }
 }

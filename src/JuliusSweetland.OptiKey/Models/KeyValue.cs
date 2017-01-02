@@ -36,14 +36,11 @@ namespace JuliusSweetland.OptiKey.Models
             this.str = str;
         }
 
-        public FunctionKeys? FunctionKey { get { return functionKey; } }
-        public string String { get { return str; } }
+        public FunctionKeys? FunctionKey => functionKey;
+        public string String => str;
 
-        public bool StringIsLetter
-        {
-            get { return String != null && String.Length == 1 && char.IsLetter(String, 0); }
-        }
-        
+        public bool StringIsLetter => String != null && String.Length == 1 && char.IsLetter(String, 0);
+
         #region IEquatable
 
         public bool Equals(KeyValue kv)

@@ -41,18 +41,12 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels
         
         #region Properties
         
-        public bool ChangesRequireRestart
-        {
-            get
-            {
-                return DictionaryViewModel.ChangesRequireRestart
-                    || OtherViewModel.ChangesRequireRestart
-                    || PointingAndSelectingViewModel.ChangesRequireRestart
-                    || SoundsViewModel.ChangesRequireRestart
-                    || VisualsViewModel.ChangesRequireRestart
-                    || WordsViewModel.ChangesRequireRestart;
-            }
-        }
+        public bool ChangesRequireRestart => DictionaryViewModel.ChangesRequireRestart
+                                             || OtherViewModel.ChangesRequireRestart
+                                             || PointingAndSelectingViewModel.ChangesRequireRestart
+                                             || SoundsViewModel.ChangesRequireRestart
+                                             || VisualsViewModel.ChangesRequireRestart
+                                             || WordsViewModel.ChangesRequireRestart;
 
         public DictionaryViewModel DictionaryViewModel { get; private set; }
         public OtherViewModel OtherViewModel { get; private set; }

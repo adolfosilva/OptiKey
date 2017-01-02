@@ -11,22 +11,13 @@ namespace JuliusSweetland.OptiKey.Models
             KeyValue = keyValue;
         }
 
-        public Point Point { get; private set; }
-        public KeyValue? KeyValue { get; private set; }
+        public Point Point { get; }
+        public KeyValue? KeyValue { get; }
 
-        public bool StringIsLetter
-        {
-            get { return KeyValue != null && KeyValue.Value.StringIsLetter; }
-        }
+        public bool StringIsLetter => KeyValue?.StringIsLetter ?? false;
 
-        public string String
-        {
-            get { return KeyValue != null ? KeyValue.Value.String : null; }
-        }
+        public string String => KeyValue?.String;
 
-        public override string ToString()
-        {
-            return string.Format("({0},{1})='{2}'", Point.X, Point.Y, KeyValue);
-        }
+        public override string ToString() => $"({Point.X},{Point.Y})='{KeyValue}'";
     }
 }

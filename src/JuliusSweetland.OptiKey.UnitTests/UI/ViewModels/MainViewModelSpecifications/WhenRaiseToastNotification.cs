@@ -7,10 +7,10 @@ namespace JuliusSweetland.OptiKey.UnitTests.UI.ViewModels.MainViewModelSpecifica
     [TestFixture]
     public class WhenRaiseToastNotificationGivenToastNotificationEventHandler : MainViewModelTestBase
     {
-        protected string Title { get { return "dummy-title"; } }
-        protected string Content { get { return "dummy-content"; } }
-        protected NotificationTypes NotificationType { get { return NotificationTypes.Error; } }
-        protected Action Callback { get { return new Action(() => { }); } }
+        protected string Title => "dummy-title";
+        protected string Content => "dummy-content";
+        protected NotificationTypes NotificationType => NotificationTypes.Error;
+        protected Action Callback => () => { };
 
         protected bool IsToastNotificationEventHandlerCalled { get; private set; }
 

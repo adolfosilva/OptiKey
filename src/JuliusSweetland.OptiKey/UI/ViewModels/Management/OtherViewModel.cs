@@ -72,14 +72,8 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels.Management
             set { SetProperty(ref debug, value); }
         }
 
-        public bool ChangesRequireRestart
-        {
-            get
-            {
-                return Settings.Default.Debug != Debug;
-            }
-        }
-        
+        public bool ChangesRequireRestart => Settings.Default.Debug != Debug;
+
         #endregion
         
         #region Methods

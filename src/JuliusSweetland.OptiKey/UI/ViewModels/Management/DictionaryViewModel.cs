@@ -52,11 +52,8 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels.Management
             }
         }
 
-        public bool ChangesRequireRestart
-        {
-            get { return false; }
-        }
-        
+        public bool ChangesRequireRestart => false;
+
         public DelegateCommand AddCommand { get; private set; }
         public DelegateCommand<string> ToggleDeleteCommand { get; private set; }        
         

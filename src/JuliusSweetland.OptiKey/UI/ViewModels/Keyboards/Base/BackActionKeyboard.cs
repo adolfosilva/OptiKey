@@ -12,9 +12,6 @@ namespace JuliusSweetland.OptiKey.UI.ViewModels.Keyboards.Base
             this.backAction = backAction;
         }
 
-        public Action BackAction
-        {
-            get { return backAction; }
-        }
+        public Action BackAction => backAction;
     }
 }
